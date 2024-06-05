@@ -9,7 +9,7 @@ import PrivateRoute from './Privateroute';
 
 export default function Router() {
     const userExist = false
-    function AuthCheck() {
+    function UserLoginCheck() {
         if (userExist) {
             return true
         } else {
@@ -25,7 +25,7 @@ export default function Router() {
                         <Routes>
                             <Route exact path="/login" element={<Login />} />
                             <Route exact path="/signup" element={<Signup />} />
-                            <Route exact path="/" element={<PrivateRoute currentUser={AuthCheck()} > <Home /> </PrivateRoute>} />
+                            <Route exact path="/" element={<PrivateRoute currentUser={UserLoginCheck()} > <Home /> </PrivateRoute>} />
                         </Routes>
                     </Suspense>
                 </BrowserRouter>
